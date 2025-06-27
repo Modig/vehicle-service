@@ -33,20 +33,20 @@ jobs:
           restore-keys: maven-
 
       - name: Run Tests
-        run: ./mvn clean verify
+        run: ./mvnw clean verify
 
-  # 2. Deploy to Production
-  deploy:
-    name: Deploy to Production
-    needs: test
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    environment:
-      name: production
-      url: https://prod.my-vehicle-service.com
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Deploy to Production
-        run: echo "🚀 Auto-deploying to PRODUCTION"
+#  # 2. Deploy to Production
+#  deploy:
+#    name: Deploy to Production
+#    needs: test
+#    runs-on: ubuntu-latest
+#    if: github.ref == 'refs/heads/main'
+#    environment:
+#      name: production
+#      url: https://prod.my-vehicle-service.com
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v4
+#
+#      - name: Deploy to Production
+#        run: echo "🚀 Auto-deploying to PRODUCTION"
