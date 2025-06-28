@@ -14,6 +14,13 @@ public class VehicleService {
         this.repository = repository;
     }
 
+    /**
+     * Retrieves a vehicle by registration number.
+     *
+     * @param regNumber the vehicle's registration number
+     * @return the Vehicle object
+     * @throws VehicleNotFoundException if no vehicle is found
+     */
     public Vehicle getVehicle(String regNumber) {
         return repository.findByRegistrationNumber(regNumber)
                 .orElseThrow(() -> new VehicleNotFoundException(regNumber));

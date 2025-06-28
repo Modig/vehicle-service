@@ -3,8 +3,8 @@ package dev.modig.vehicle.repository;
 import dev.modig.vehicle.model.Vehicle;
 import org.springframework.stereotype.Repository;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 @Repository
@@ -20,6 +20,12 @@ public class VehicleRepository {
         vehicleRegistry.put("AUD00I", new dev.modig.vehicle.model.Vehicle("AUD00I", "Audi", "Q7", 2020));
     }
 
+    /**
+     * Finds a vehicle by registration number in the in-memory store.
+     *
+     * @param regNumber the vehicle's registration number
+     * @return Optional containing the Vehicle if found
+     */
     public Optional<Vehicle> findByRegistrationNumber(String regNumber) {
         return Optional.ofNullable(vehicleRegistry.get(regNumber.toUpperCase()));
     }

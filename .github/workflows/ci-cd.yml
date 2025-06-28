@@ -49,4 +49,4 @@ jobs:
 #        uses: actions/checkout@v4
 #
 #      - name: Deploy to Production
-#        run: echo "🚀 Auto-deploying to PRODUCTION"
+#        run: echo "Auto-deploying to PRODUCTION"

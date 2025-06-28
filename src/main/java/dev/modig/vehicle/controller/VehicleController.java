@@ -16,6 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+/**
+ * REST controller for vehicle-related API endpoints.
+ * Provides vehicle lookup based on registration number.
+ */
 @RestController
 @RequestMapping("/api/v1/vehicle")
 public class VehicleController {
@@ -26,14 +30,14 @@ public class VehicleController {
         this.vehicleService = service;
     }
 
+    /**
+     * Returns vehicle information based on registration number.
+     *
+     * @param registrationNumber the vehicle's registration number
+     * @return ResponseEntity containing vehicle data or error message
+     */
     @Operation(summary = "Get vehicle by registration number")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Vehicle found",
-                    content = @Content(mediaType = "application/json",
-                            schema = @Schema(implementation = Vehicle.class))),
-            @ApiResponse(responseCode = "404", description = "Vehicle not found"),
-            @ApiResponse(responseCode = "400", description = "Invalid registration number")
-    })
+    @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "Vehicle found", content = @Content(mediaType = "application/json", schema = @Schema(implementation = Vehicle.class))), @ApiResponse(responseCode = "404", description = "Vehicle not found"), @ApiResponse(responseCode = "400", description = "Invalid registration number")})
     @GetMapping("/{registrationNumber}")
     public ResponseEntity<?> getVehicleInfo(@PathVariable("registrationNumber") String registrationNumber) {
         if (!registrationNumber.matches("^[A-Za-z0-9]{1,10}$")) {
