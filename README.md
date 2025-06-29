@@ -149,6 +149,7 @@ See `.github/workflows/ci-cd.yml` for pipeline details.
 * The vehicle data is hardcoded. In a real application, it should be stored in a database.
 * No authentication or authorization is implemented.
 * Input validation and sanitization are minimal.
+* Error handling could be improved.
 * Contract testing (e.g., using Pact) could be added.
 * Logging is minimal and could be improved for better traceability.
 * The deployment step in GitHub Actions is commented out and untested—it may contain errors.
