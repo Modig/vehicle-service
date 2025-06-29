@@ -25,7 +25,7 @@ services (e.g., an insurance system).
 ```
 git clone https://github.com/your-org/vehicle-service.git
 cd vehicle-service
-````
+```
 
 ### Run Tests
 
@@ -144,7 +144,7 @@ This service is compatible with GitHub Actions and includes a basic pipeline tha
 
 See `.github/workflows/ci-cd.yml` for pipeline details.
 
-## Improvement points
+## Areas for Improvement
 
 * The vehicle data is hardcoded. In a real application, it should be stored in a database.
 * No authentication or authorization is implemented.
