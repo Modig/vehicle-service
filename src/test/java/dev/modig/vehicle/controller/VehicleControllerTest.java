@@ -52,10 +52,10 @@ public class VehicleControllerTest {
 
     @Test
     public void shouldThrowBadRequestForInvalidRegistrationNumber() {
-        String invalidRegistration = "###$$$";
+        String invalidRegistrationNumber = "###$$$";
 
         ResponseStatusException exception = assertThrows(ResponseStatusException.class, () ->
-                vehicleController.getVehicleInfo(invalidRegistration));
+                vehicleController.getVehicleInfo(invalidRegistrationNumber));
 
         assertThat(exception.getStatusCode().value()).isEqualTo(400);
         assertThat(exception.getReason()).isEqualTo("Invalid registration number");

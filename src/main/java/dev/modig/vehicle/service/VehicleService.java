@@ -22,7 +22,6 @@ public class VehicleService {
      * @throws VehicleNotFoundException if no vehicle is found
      */
     public Vehicle getVehicle(String regNumber) {
-        return repository.findByRegistrationNumber(regNumber)
-                .orElseThrow(() -> new VehicleNotFoundException(regNumber));
+        return repository.findByRegistrationNumber(regNumber).orElseThrow(() -> new VehicleNotFoundException(regNumber));
     }
 }

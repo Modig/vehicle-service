@@ -52,4 +52,3 @@ class VehicleServiceIntegrationTest {
                 .andExpect(jsonPath("$.make").value("Honda"));
     }
 }
-

@@ -2,7 +2,6 @@ package dev.modig.vehicle.e2e;
 
 import dev.modig.vehicle.VehicleServiceApplication;
 import dev.modig.vehicle.model.Vehicle;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,10 +12,7 @@ import org.springframework.http.ResponseEntity;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(
-        classes = VehicleServiceApplication.class,
-        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
-)
+@SpringBootTest(classes = VehicleServiceApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class VehicleE2ETest {
 
     @LocalServerPort
@@ -30,7 +26,6 @@ class VehicleE2ETest {
     }
 
     @Test
-    @DisplayName("GET /api/v1/vehicle/ABC123 - Full E2E Success Case")
     void testGetVehicleSuccess() {
         ResponseEntity<Vehicle> response = restTemplate.getForEntity(baseUrl() + "/ABC123", Vehicle.class);
 
@@ -43,7 +38,6 @@ class VehicleE2ETest {
     }
 
     @Test
-    @DisplayName("GET /api/v1/vehicle/INVALID-REG - Bad Request E2E")
     void testInvalidRegNumber() {
         ResponseEntity<String> response = restTemplate.getForEntity(baseUrl() + "/INVALID-REG", String.class);
 
@@ -53,7 +47,6 @@ class VehicleE2ETest {
     }
 
     @Test
-    @DisplayName("GET /api/v1/vehicle/NOVALUE - Not Found E2E")
     void testVehicleNotFound() {
         ResponseEntity<String> response = restTemplate.getForEntity(baseUrl() + "/NOVALUE", String.class);
 
@@ -61,4 +54,3 @@ class VehicleE2ETest {
         assertThat(response.getBody()).isEqualTo("Vehicle not found");
     }
 }
-
