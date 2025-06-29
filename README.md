@@ -1,6 +1,8 @@
 # Vehicle Service
 
-The **Vehicle Service** is a standalone Spring Boot application that provides a REST API to retrieve information about registered vehicles by their registration number. It acts as an integration layer, designed to be consumed by other services (e.g., an insurance system).
+The **Vehicle Service** is a standalone Spring Boot application that provides a REST API to retrieve information about
+registered vehicles by their registration number. It acts as an integration layer, designed to be consumed by other
+services (e.g., an insurance system).
 
 ## Features
 
@@ -154,4 +156,5 @@ See `.github/workflows/ci-cd.yml` for pipeline details.
 
 ## PLEASE NOTE
 
-General design discussions and personal reflections about the solution and the assignment is located in the README.md for the insurance-service.
+General design discussions and personal reflections about the solution and the assignment is located in the README.md
+for the insurance-service.
